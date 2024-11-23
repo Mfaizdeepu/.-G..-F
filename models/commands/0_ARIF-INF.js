@@ -25,7 +25,7 @@ const time = process.uptime(),
 const moment = require("moment-timezone");
 var juswa = moment.tz("Asia/Kolkata").format("DD/MM/YYYY");
 var link =                                     
-["https://i.imgur.com/rPI3r1C.jpg","https://i.imgur.com/e9dOGP3.jpg","https://i.imgur.com/lmnkobJ.jpg"];
+["https://i.imgur.com/OL7YVCQ.jpeg","https://i.imgur.com/gNfLbvr.jpeg"];
 var callback = () => api.sendMessage({body:`❁ ━━━━[  𝗜𝗡𝗙  ]━━━━ ❁\n\n╰┈➤  𝗕𝗢𝗧 𝗡𝗔𝗠𝗘 𒁍 [ ${global.config.BOTNAME} ]\n ╰┈➤  𝗕𝗢𝗧 𝗔𝗗𝗠𝗜𝗡 𒁍  [ 𝐀𝐋𝐎𝐍 𝐆𝐈𝐑𝐋 ]\n╰┈➤ 𝗕𝗢𝗧  𝗣𝗥𝗘𝗙𝗜𝗫 𒁍 [ ${global.config.PREFIX} ]\n╰┈➤ 𝗗𝗔𝗧𝗘 𒁍 [ ${juswa} ]\n╰┈➤ 𝗕𝗢𝗧 𝗥𝗨𝗡𝗡𝗜𝗡𝗚 𝗧𝗜𝗠𝗘 𒁍  [ ${hours}:${minutes}:${seconds} ]\n╰┈➤  𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 𝗜𝗗 𒁍 [ https://www fb.com/id=100090796122127 ]\n\n━━━━━━━━━━━━━━━━\n𝐌𝐀𝐃𝐄 𝐁𝐘 🍒 𝐀𝐋𝐎𝐍 𝐆𝐈𝐑𝐋`,attachment: fs.createReadStream(__dirname + "/cache/juswa.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/juswa.jpg")); 
       return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/juswa.jpg")).on("close",() => callback());
    };
